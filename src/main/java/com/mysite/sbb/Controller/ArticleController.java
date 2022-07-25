@@ -1,7 +1,9 @@
 package com.mysite.sbb.Controller;
 
 import com.mysite.sbb.Dao.ArticleRepository;
+import com.mysite.sbb.Dao.UserRepository;
 import com.mysite.sbb.Domain.Article;
+import com.mysite.sbb.Domain.User;
 import com.mysite.sbb.Util.Util;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -17,6 +19,8 @@ import java.util.List;
 public class ArticleController {
 
     private final ArticleRepository articleRepository;
+
+    private final UserRepository userRepository;
 
     @RequestMapping("/list")
     @ResponseBody
@@ -42,6 +46,8 @@ public class ArticleController {
         article.setRegDate(LocalDateTime.now());
         article.setUpdateDate(LocalDateTime.now());
         article.setUserId(1L);
+        User user = userRepository.findById(1L).get();
+        article.setUser(user);
 
         articleRepository.save(article);
 

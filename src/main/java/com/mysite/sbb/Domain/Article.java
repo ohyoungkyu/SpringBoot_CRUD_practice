@@ -3,10 +3,7 @@ package com.mysite.sbb.Domain;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
@@ -24,4 +21,7 @@ public class Article {
     public String body;
 
     public Long userId;
+
+    @ManyToOne
+    private User user;
 }
