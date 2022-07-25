@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Controller
-@RequestMapping("/usr/article")
+@RequestMapping("/article")
 @AllArgsConstructor
 public class ArticleController {
 
@@ -45,7 +45,6 @@ public class ArticleController {
         article.setBody(body);
         article.setRegDate(LocalDateTime.now());
         article.setUpdateDate(LocalDateTime.now());
-        article.setUserId(1L);
         User user = userRepository.findById(1L).get();
         article.setUser(user);
 

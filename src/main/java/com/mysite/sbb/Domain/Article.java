@@ -20,8 +20,6 @@ public class Article {
     public String title;
     public String body;
 
-    public Long userId;
-
     @ManyToOne
     private User user;
 }
