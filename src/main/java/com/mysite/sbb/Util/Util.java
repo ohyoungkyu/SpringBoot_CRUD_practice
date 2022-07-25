@@ -1,15 +1,15 @@
 package com.mysite.sbb.Util;
 
 public class Util {
-    public static boolean empty(Object object) {
-        if(object == null) {
+    public static boolean empty(Object obj) {
+        if(obj == null) {
             return true;
         }
-        if(object instanceof String == false) {
+        if(obj instanceof String == false) {
             return true;
         }
 
-        String str = (String) object;
+        String str = (String) obj;
 
         return str.trim().length() == 0;
     }

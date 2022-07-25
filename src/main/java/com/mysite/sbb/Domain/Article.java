@@ -2,7 +2,6 @@ package com.mysite.sbb.Domain;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.GeneratorType;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,12 +14,14 @@ import java.time.LocalDateTime;
 @Getter
 public class Article {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy =  GenerationType.IDENTITY)
     public Long id;
+
     public LocalDateTime regDate;
     public LocalDateTime updateDate;
+
     public String title;
     public String body;
-    public Long userId;
 
+    public Long userId;
 }
