@@ -1,5 +1,6 @@
 package com.mysite.sbb.Domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,6 +19,8 @@ public class User {
     public LocalDateTime updateDate;
 
     public String email;
-    public String password;
     public String name;
+
+    @JsonIgnore
+    private String password;
 }
